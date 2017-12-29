@@ -1,7 +1,7 @@
-package com.books.rawe.way2offer;
+package com.books.way2offer;
 
-import com.books.rawe.datastructure.tree.TreeNode;
-import com.books.rawe.datastructure.tree.TreeUtils;
+import com.books.datastructure.tree.TreeNode;
+import com.books.datastructure.tree.TreeUtils;
 
 import java.util.Arrays;
 import java.util.LinkedList;

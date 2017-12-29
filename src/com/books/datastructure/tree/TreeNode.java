@@ -1,4 +1,4 @@
-package com.books.rawe.datastructure.tree;
+package com.books.datastructure.tree;
 
 /**
  * Created by books on 12/21/17.

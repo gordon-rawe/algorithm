@@ -1,4 +1,4 @@
-package com.books.rawe.way2offer;
+package com.books.way2offer;
 
 /**
  * Created by books on 12/28/17.

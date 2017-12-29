@@ -1,6 +1,6 @@
-package com.books.rawe.extra;
+package com.books.extra;
 
-import com.books.rawe.datastructure.tree.TreeNode;
+import com.books.datastructure.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Collections;

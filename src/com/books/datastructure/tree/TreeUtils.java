@@ -1,4 +1,4 @@
-package com.books.rawe.datastructure.tree;
+package com.books.datastructure.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
