@@ -40,4 +40,53 @@ public class Util {
             head = head.next;
         }
     }
+
+    /**
+     * 实用数组来解决大数问题
+     * */
+    public int leftRotate(int num, int d) {
+        d = d % 32;
+        int[] bits = intTo32Ints(num);
+        rorateLeft(bits, d);
+        return intsToInt(bits);
+    }
+
+    private static int intsToInt(int[] bits) {
+        int result = 0;
+        for (int i = 0; i < 32; i++) {
+            if (bits[i] == 1) {
+                result |= 1 << (31 - i);
+            }
+        }
+        return result;
+    }
+
+    private static int[] intTo32Ints(int number) {
+        int[] bits = new int[32];
+        int index = bits.length - 1;
+        while(index >= 0) {
+            bits[index--] = (number & 1) == 1 ? 1 : 0;
+            number = number >> 1;
+        }
+        return bits;
+    }
+
+    private static void rorateLeft(int[] bits, int d) {
+        if(bits.length == 0 || d == 0) return;
+        reverse(bits, 0, d - 1);
+        reverse(bits, d, bits.length - 1);
+        reverse(bits, 0, bits.length - 1);
+    }
+
+    private static void reverse(int[] bits, int left, int right) {
+        while(left < right) {
+            int tmpValue = bits[left];
+            bits[left++] = bits[right];
+            bits[right--] = tmpValue;
+        }
+    }
+
+    public static void main(String[] args) {
+
+    }
 }

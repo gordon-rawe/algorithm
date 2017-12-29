@@ -1,4 +1,4 @@
-package com.company;
+package com.company.lru;
 
 /**
  * Created by gordon on 10/23/17.
@@ -9,7 +9,7 @@ class Node {
     Node pre;
     Node next;
 
-    public Node(int key, int value) {
+    Node(int key, int value) {
         this.key = key;
         this.value = value;
     }

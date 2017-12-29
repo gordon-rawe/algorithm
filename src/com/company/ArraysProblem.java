@@ -5,16 +5,6 @@ package com.company;
  */
 public class ArraysProblem {
 
-    static int longestSubSequence(String X, String Y, int m, int n) {
-        if (m == 0 || n == 0) {
-            return 0;
-        }
-        if (X.charAt(m - 1) == Y.charAt(n - 1)) {
-            return longestSubSequence(X, Y, m - 1, n - 1) + 1;
-        }
-        return Math.max(longestSubSequence(X, Y, m - 1, n), longestSubSequence(X, Y, m, n - 1));
-    }
-
     static int longestSubSequenceTable(String X, String Y, int m, int n) {
         int[][] table = new int[m + 1][n + 1];
         for (int i = 0; i < m + 1; i++) {
@@ -41,7 +31,7 @@ public class ArraysProblem {
                 } else if (X.charAt(i - 1) == Y.charAt(j - 1)) {
                     int lastValue = table[i - 1][j - 1];
                     table[i][j] = lastValue + 1;
-                    if(maxValue < table[i][j]) maxValue = table[i][j];
+                    if (maxValue < table[i][j]) maxValue = table[i][j];
                 } else {
                     table[i][j] = 0;
                 }

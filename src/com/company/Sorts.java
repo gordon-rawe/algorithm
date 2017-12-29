@@ -10,14 +10,18 @@ public class Sorts {
         help(nums, 0, nums.length - 1);
     }
 
-    public static void help(int[] nums, int left, int right) {
+    private static void help(int[] nums, int left, int right) {
         if (left >= right) return;
         int pivotIndex = partition(nums, left, right);
         help(nums, left, pivotIndex - 1);
         help(nums, pivotIndex + 1, right);
     }
 
-    public static int partition(int[] data, int left, int right) {
+    /**
+     * todo
+     * 注意点：四次判断left < right, 后面就好说了
+     * */
+    private static int partition(int[] data, int left, int right) {
         int pivot = data[left];
         while (left < right) {
             while (left < right && data[right] > pivot) right--;
@@ -93,7 +97,10 @@ public class Sorts {
         }
     }
 
-    public static void maxHeap(int[] nums, int maxIndex, int index) {
+    /**
+     * todo need to be remembered.
+     * */
+    private static void maxHeap(int[] nums, int maxIndex, int index) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
         int largest = index;
@@ -109,7 +116,10 @@ public class Sorts {
         }
     }
 
-    public static void swap(int[] nums, int a, int b) {
+    /**
+     * swap with | operation requires it not to be 0
+     * */
+    static void swap(int[] nums, int a, int b) {
         int tmpValue = nums[a];
         nums[a] = nums[b];
         nums[b] = tmpValue;
@@ -157,5 +167,37 @@ public class Sorts {
         int[] nums = new int[]{1, 4, 3, 2, 6, 8, 5, 7, 9};
         rotateArray(nums, 2);
         System.out.println(java.util.Arrays.toString(nums));
+    }
+
+    private static void mergeSort(int[] nums) {
+        if(nums == null || nums.length < 2) return;
+        mergeHelper(nums, 0, nums.length - 1);
+    }
+
+    private static void mergeHelper(int[] nums, int left, int right) {
+        if(left < right) {
+            int mid = (left + right) / 2;
+            mergeHelper(nums, left, mid);
+            mergeHelper(nums, mid + 1, right);
+            zipHelper(nums, left, mid, right);
+        }
+    }
+
+    private static void zipHelper(int[] nums, int left, int mid, int right) {
+        int head1 = left, head2 = mid + 1;
+        int[] copySpace = new int[right - left + 1];
+        int index = 0;
+        while(head1 <= mid && head2 <= right) {
+            copySpace[index++] = nums[head1] > nums[head2] ? nums[head1++] : nums[head2++];
+        }
+        while(head1 <= mid) {
+            copySpace[index++] = nums[head1++];
+        }
+        while(head2 <= right) {
+            copySpace[index++] = nums[head2++];
+        }
+        for(int i = 0; i < copySpace.length;i++) {
+            nums[left + i] = copySpace[i];
+        }
     }
 }

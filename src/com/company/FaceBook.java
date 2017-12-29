@@ -6,164 +6,6 @@ import java.util.*;
  * Created by gordon on 10/31/17.
  */
 public class FaceBook {
-    public static List<Integer> countAndSay(int n) {
-        List<Integer> list = new LinkedList<>();
-        list.add(1);
-        for (int i = 0; i < n - 1; i++) {
-            int index = 1, count = 1;
-            List<Integer> helper = new LinkedList<>();
-            while (index < list.size()) {
-                if (Objects.equals(list.get(index), list.get(index - 1))) {
-                    count++;
-                } else {
-                    helper.add(count);
-                    helper.add(list.get(index - 1));
-                    count = 1;
-                }
-                index++;
-            }
-            helper.add(count);
-            helper.add(list.get(index - 1));
-            list = helper;
-        }
-        return list;
-    }
-
-    public static int numIslands(boolean[][] grid) {
-        int row = grid.length, col = grid[0].length;
-        int count = 0;
-        boolean[][] visited = new boolean[row][col];
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                if (!visited[i][j] && grid[i][j]) {
-                    count++;
-                    System.out.println(i + " " + j);
-                    helper(grid, visited, i, j, row, col);
-                }
-            }
-        }
-        return count;
-    }
-
-    public static void helper(boolean[][] grid, boolean[][] visited, int row, int col, int ROW, int COL) {
-        if (col >= COL || row >= ROW || row < 0 || col < 0 || visited[row][col] || !grid[row][col]) {
-            return;
-        }
-        visited[row][col] = true;
-        helper(grid, visited, row + 1, col, ROW, COL);
-        helper(grid, visited, row, col + 1, ROW, COL);
-        helper(grid, visited, row - 1, col, ROW, COL);
-        helper(grid, visited, row, col - 1, ROW, COL);
-    }
-
-    public static int sqrt(int x) {
-        if (x < 0) return -1;
-        if (x == 0) return 0;
-        int l = 1, r = x / 2 + 1;
-        while (l <= r) {
-            int m = (l + r) / 2;
-            if (m * m <= x && m * m + 2 * m + 1 > x) {
-                return m;
-            }
-            if (m * m < x) {
-                l = m + 1;
-            } else {
-                r = m - 1;
-            }
-        }
-        return 0;
-    }
-
-    public static boolean isPalindrome(String S) {
-        if (S == null || S.length() < 2) return true;
-        int p1 = 0, p2 = S.length() - 1;
-        S = S.toLowerCase();
-        while (p1 < p2) {
-            if (!isValid(S.charAt(p1))) {
-                p1++;
-            } else if (!isValid(S.charAt(p2))) {
-                p2--;
-            } else if (S.charAt(p1) != S.charAt(p2)) {
-                return false;
-            } else {
-                p1++;
-                p2--;
-            }
-        }
-        return true;
-    }
-
-    public static boolean isValid(Character c) {
-        return Character.isAlphabetic(c) || Character.isDigit(c);
-    }
-
-    public static void permutation(int[] nums, int index) {
-        if (index == nums.length) {
-            System.out.println(java.util.Arrays.toString(nums));
-            return;
-        }
-        for (int i = index; i < nums.length; i++) {
-            swap(nums, index, i);
-            permutation(nums, index + 1);
-            swap(nums, index, i);
-        }
-    }
-
-    private static void swap(int[] sample, int a, int b) {
-        int tmp = sample[a];
-        sample[a] = sample[b];
-        sample[b] = tmp;
-    }
-
-    public static List<String> letterCombinations(String digits) {
-        List<String> retValue = new ArrayList<>();
-        helper(digits, 0, new ArrayList<>(), retValue);
-        return retValue;
-    }
-
-    public static void helper(String digits, int index, List<Character> list, List<String> res) {
-        if (index == digits.length()) {
-            StringBuilder builder = new StringBuilder();
-            for (Character character : list) {
-                builder.append(character);
-            }
-            res.add(builder.toString());
-            return;
-        }
-        Character[] chars = mapping(digits.charAt(index));
-        if (chars.length == 0) {
-            helper(digits, index + 1, list, res);
-        } else {
-            for (int i = 0; i < chars.length; i++) {
-                list.add(chars[i]);
-                helper(digits, index + 1, list, res);
-                list.remove(list.size() - 1);
-            }
-        }
-    }
-
-    public static Character[] mapping(Character n) {
-        switch (n) {
-            case '2':
-                return new Character[]{'a', 'b', 'c'};
-            case '3':
-                return new Character[]{'d', 'e', 'f'};
-            case '4':
-                return new Character[]{'g', 'h', 'i'};
-            case '5':
-                return new Character[]{'j', 'k', 'l'};
-            case '6':
-                return new Character[]{'m', 'n', 'o'};
-            case '7':
-                return new Character[]{'p', 'q', 'r', 's'};
-            case '8':
-                return new Character[]{'t', 'u', 'v'};
-            case '9':
-                return new Character[]{'w', 'x', 'y', 'z'};
-            default:
-                return new Character[]{};
-        }
-    }
 
     public static int minimumSize(int[] nums, int s) {
         int pre = 0, minSize = nums.length + 1, sum = 0;
@@ -226,25 +68,6 @@ public class FaceBook {
             }
         }
         return true;
-    }
-
-    public static int findPeak(int[] nums) {
-        int left = 0, right = nums.length - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            if (left == right) {
-                return nums[left];
-            } else if (left + 1 == right) {
-                return nums[left] > nums[right] ? nums[left] : nums[right];
-            } else if (nums[mid] > nums[mid - 1] && nums[mid] > nums[mid + 1]) {
-                return nums[mid];
-            } else if (nums[mid] < nums[mid - 1]) {
-                right = mid - 1;
-            } else if (nums[mid] < nums[mid + 1]) {
-                left = mid + 1;
-            }
-        }
-        return -1;
     }
 
     public static int findPivotBinarySearch(int[] array) {
@@ -340,75 +163,6 @@ public class FaceBook {
         return curLen;
     }
 
-    public static int longestBitonicSequence(int[] source) {
-        int len = source.length;
-        if (len == 1) return 1;
-        int[] lis = new int[len];
-        int[] lds = new int[len];
-
-        for (int i = 0; i < len; i++) {
-            lis[i] = 1;
-            for (int j = 0; j < i; j++) {
-                if (source[i] > source[j]) {
-                    lis[i] = Math.max(lis[j] + 1, lis[i]);
-                }
-            }
-        }
-        for (int i = 0; i < len; i++) {
-            lds[i] = 1;
-            for (int j = 0; j < i; j++) {
-                if (source[i] < source[j]) {
-                    lds[i] = Math.max(lds[j] + 1, lds[i]);
-                }
-            }
-        }
-        int maxLen = lis[0] + lds[0] - 1;
-        for (int i = 1; i < len; i++) {
-            if (maxLen < lis[i] + lds[i] - 1) {
-                maxLen = lis[i] + lds[i] - 1;
-            }
-        }
-        return maxLen;
-    }
-
-    public int getRequiredIndex(int[] binaryArray) {
-        int prevIndex = -1, prevPrevIndex = -1;
-        int maxLen = -1, requiredIndex = -1;
-        for (int i = 0; i < binaryArray.length; i++) {
-            if (binaryArray[i] == 0) {
-                if (prevPrevIndex != -1) {
-                    int curLen = i - prevPrevIndex - 1;
-                    if (curLen > maxLen) {
-                        maxLen = curLen;
-                        requiredIndex = prevIndex;
-                    }
-                }
-                prevIndex = i;
-                prevPrevIndex = prevIndex;
-            }
-        }
-        if (maxLen == -1) {
-            if (prevPrevIndex == -1) {
-                requiredIndex = prevIndex;
-            } else {
-                if (prevIndex > binaryArray.length - prevPrevIndex - 1) {
-                    requiredIndex = prevPrevIndex;
-                } else {
-                    requiredIndex = prevIndex;
-                }
-            }
-        }
-        return requiredIndex;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(maximumProfitMulti(
-                new int[]{
-                        100, 80, 120, 130, 70, 60, 100, 125
-                }
-        ));
-    }
-
     public static List<int[]> getSkyline(int[][] buildings) {
         List<int[]> res = new ArrayList<>();
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(11, (o1, o2) -> o2 - o1);
@@ -440,63 +194,6 @@ public class FaceBook {
             }
         }
         return res;
-    }
-
-    public static int trapWater(int[] towers) {
-        int len = towers.length;
-        if (len == 0 || len == 1) return 0;
-        int left = 0, right = len - 1, water = 0;
-        int leftHeight = towers[left], rightHeight = towers[right];
-        while (left < right) {
-            if (leftHeight < rightHeight) {
-                left++;
-                if (leftHeight > towers[left]) {
-                    water += leftHeight - towers[left];
-                } else {
-                    leftHeight = towers[left];
-                }
-            } else {
-                right--;
-                if (rightHeight > towers[right]) {
-                    water += rightHeight - towers[right];
-                } else {
-                    rightHeight = towers[right];
-                }
-            }
-        }
-        return water;
-    }
-
-    public static int maximumProfit(int[] stockPrices) {
-        int profit = 0;
-        int minimumPrice = Integer.MAX_VALUE;
-        for (int i = 0; i < stockPrices.length; i++) {
-            profit = Math.max(profit, stockPrices[i] - minimumPrice);
-            minimumPrice = Math.min(minimumPrice, stockPrices[i]);
-        }
-        return profit;
-    }
-
-    public static int maximumProfitMulti(int[] stockPrices) {
-        int profit = 0;
-        for (int i = 1; i < stockPrices.length; i++) {
-            if (stockPrices[i] > stockPrices[i - 1]) {
-                profit += stockPrices[i] - stockPrices[i - 1];
-            }
-        }
-        return profit;
-    }
-
-    public static ListNode reverseLinkedList(ListNode head) {
-        if (head == null || head.next == null) return head;
-        ListNode current = head;
-        while (current.next != null) {
-            ListNode auxNode = current.next;
-            current.next = auxNode.next;
-            auxNode.next = head;
-            head = auxNode;
-        }
-        return head;
     }
 
     public ListNode reverseBetween(ListNode head, int m, int n) {
@@ -564,5 +261,255 @@ public class FaceBook {
             head1.next = node;
             head1 = node.next;
         }
+    }
+
+    /**
+     * facebook笔试题目
+     */
+    private static String additionI(String binString1, String binString2) {
+        if (binString1 == null || binString1.length() == 0) return binString2;
+        if (binString2 == null || binString2.length() == 0) return binString1;
+        int add = 0;
+        int p1 = binString1.length() - 1, p2 = binString2.length() - 1;
+        StringBuilder builder = new StringBuilder();
+        while (p1 >= 0 || p2 >= 0 || add > 0) {
+            int mod1 = p1 >= 0 && binString1.charAt(p1) == '1' ? 1 : 0;
+            int mod2 = p2 >= 0 && binString2.charAt(p2) == '1' ? 1 : 0;
+            int mod = (mod1 + mod2 + add) % 2;
+            add = (mod1 + mod2 + add) / 2;
+            builder.append(mod == 1 ? '1' : '0');
+            p1--;
+            p2--;
+        }
+        return builder.reverse().toString();
+    }
+
+    /**
+     * 报数，1, 11, 21, 1211, 111221,两层for循环搞定
+     */
+    private static String countAndSayI(int n) {
+        if (n == 0) return "";
+        String nowString = "1";
+        for (int i = 0; i < n - 1; i++) {
+            StringBuilder builder = new StringBuilder();
+            int j = 0;
+            while (j < nowString.length()) {
+                int count = 1;
+                char curChar = nowString.charAt(j);
+                int k = j + 1;
+                while (k < nowString.length() && nowString.charAt(k) == curChar) {
+                    k++;
+                    count++;
+                }
+                j = k;
+                builder.append(count);
+                builder.append(curChar);
+            }
+            nowString = builder.toString();
+        }
+        return nowString;
+    }
+
+    /**
+     * 一个数组表示towers，求能够收集的雨水
+     */
+    public static int trapWater(int[] towers) {
+        int len = towers.length;
+        if (len == 0 || len == 1) return 0;
+        int left = 0, right = len - 1, water = 0;
+        int leftHeight = towers[left], rightHeight = towers[right];
+        while (left < right) {
+            if (leftHeight < rightHeight) {
+                left++;
+                if (leftHeight > towers[left]) {
+                    water += leftHeight - towers[left];
+                } else {
+                    leftHeight = towers[left];
+                }
+            } else {
+                right--;
+                if (rightHeight > towers[right]) {
+                    water += rightHeight - towers[right];
+                } else {
+                    rightHeight = towers[right];
+                }
+            }
+        }
+        return water;
+    }
+
+    /**
+     * 反转单链表，比较容易
+     */
+    public static ListNode reverseLinkedList(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode current = head;
+        while (current.next != null) {
+            ListNode auxNode = current.next;
+            current.next = auxNode.next;
+            auxNode.next = head;
+            head = auxNode;
+        }
+        return head;
+    }
+
+    /**
+     * x0≤ x1≤ ... ≤ xi, and xi≥ xi+1≥ ... ≥ xn-1的序列属于一个双调(Bitonic)排序
+     * 思路：求解LIS与LDS，然后跟求解股票交易一样，在每个位置进行分割。个数为lds[i] + lis[i] - 1
+     */
+    public static int longestBitonicSequence(int[] source) {
+        int len = source.length;
+        if (len == 1) return 1;
+        int[] lis = new int[len];
+        int[] lds = new int[len];
+
+        for (int i = 0; i < len; i++) {
+            lis[i] = 1;
+            for (int j = 0; j < i; j++) {
+                if (source[i] > source[j]) {
+                    lis[i] = Math.max(lis[j] + 1, lis[i]);
+                }
+            }
+        }
+        for (int i = 0; i < len; i++) {
+            lds[i] = 1;
+            for (int j = 0; j < i; j++) {
+                if (source[i] < source[j]) {
+                    lds[i] = Math.max(lds[j] + 1, lds[i]);
+                }
+            }
+        }
+        int maxLen = lis[0] + lds[0] - 1;
+        for (int i = 1; i < len; i++) {
+            if (maxLen < lis[i] + lds[i] - 1) {
+                maxLen = lis[i] + lds[i] - 1;
+            }
+        }
+        return maxLen;
+    }
+
+    /**
+     * 当满足m * m <= x && m * m + 2 * m + 1 > x我们都认为达到sqrt的要求了。
+     */
+    private static int sqrt(int x) {
+        if (x < 0) return -1;
+        if (x == 0) return 0;
+        int l = 1, r = x / 2 + 1;
+        while (l <= r) {
+            int m = (l + r) / 2;
+            if (m * m <= x && m * m + 2 * m + 1 > x) {
+                return m;
+            }
+            if (m * m < x) {
+                l = m;
+            } else {
+                r = m;
+            }
+        }
+        return 0;
+    }
+
+
+    /**
+     * 判断一个字符串是否是回文，字符串可能包含数字或字母，其它都视为无效字符
+     */
+    public static boolean isPalindrome(String S) {
+        if (S == null || S.length() < 2) return true;
+        int p1 = 0, p2 = S.length() - 1;
+        S = S.toLowerCase();
+        while (p1 < p2) {
+            if (!isValid(S.charAt(p1))) {
+                p1++;
+            } else if (!isValid(S.charAt(p2))) {
+                p2--;
+            } else if (S.charAt(p1) != S.charAt(p2)) {
+                return false;
+            } else {
+                p1++;
+                p2--;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isValid(Character c) {
+        return Character.isAlphabetic(c) || Character.isDigit(c);
+    }
+
+    /**
+     * 电话键盘的数字组合可以表达的字符串组合
+     */
+    public static List<String> letterCombinations(String digits) {
+        List<String> retValue = new ArrayList<>();
+        helper(digits, 0, new ArrayList<>(), retValue);
+        return retValue;
+    }
+
+    private static void helper(String digits, int index, List<Character> list, List<String> res) {
+        if (index == digits.length()) {
+            StringBuilder builder = new StringBuilder();
+            for (Character character : list) {
+                builder.append(character);
+            }
+            res.add(builder.toString());
+            return;
+        }
+        Character[] chars = mapping(digits.charAt(index));
+        if (chars.length == 0) {
+            helper(digits, index + 1, list, res);
+        } else {
+            for (int i = 0; i < chars.length; i++) {
+                list.add(chars[i]);
+                helper(digits, index + 1, list, res);
+                list.remove(list.size() - 1);
+            }
+        }
+    }
+
+    public static Character[] mapping(Character n) {
+        switch (n) {
+            case '2':
+                return new Character[]{'a', 'b', 'c'};
+            case '3':
+                return new Character[]{'d', 'e', 'f'};
+            case '4':
+                return new Character[]{'g', 'h', 'i'};
+            case '5':
+                return new Character[]{'j', 'k', 'l'};
+            case '6':
+                return new Character[]{'m', 'n', 'o'};
+            case '7':
+                return new Character[]{'p', 'q', 'r', 's'};
+            case '8':
+                return new Character[]{'t', 'u', 'v'};
+            case '9':
+                return new Character[]{'w', 'x', 'y', 'z'};
+            default:
+                return new Character[]{};
+        }
+    }
+
+    /**
+     * 数字的排列组合
+     * */
+    private static void combinations(int n) {
+        if (n <= 0) return;
+        int[] nums = new int[n];
+        combineHelper(nums, 0);
+    }
+
+    private static void combineHelper(int[] nums, int index) {
+        if (index == nums.length) {
+            System.out.println(Arrays.toString(nums));
+            return;
+        }
+        for (int i = 0; i < 10; i++) {
+            nums[index] = i;
+            combineHelper(nums, index + 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        combinations(3);
     }
 }

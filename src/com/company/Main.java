@@ -5,14 +5,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-//        Util.printListNode(mergeTwoLists(
-//                Util.buildList("1->5->7->10"),
-//                Util.buildList("2->4->6->8->9")
-//        ));
-        Util.printListNode(reverseKGroup(Util.buildList("1->3->2->4"), 4));
-//        System.out.println(isPalindrome(
-//                Util.buildList("1->2->2->1")
-//        ));
+        System.out.println(majorityNumberIII(Arrays.asList(1, 2, 1, 2, 1, 3, 3), 3));
     }
 
     private static void bubbleSort(int[] sample) {
@@ -35,16 +28,20 @@ public class Main {
         }
     }
 
-    private static void insertSort(int[] sample) {
-        for (int i = 1; i < sample.length; i++) {
-            if (sample[i] < sample[i - 1]) {
+    /**
+     * passed
+     */
+    private static void insertSort(int[] nums) {
+        if (nums == null || nums.length < 2) return;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < nums[i - 1]) {
+                int value = nums[i];
                 int k = i;
-                int now = sample[k];
-                while (now < sample[k - 1]) {
-                    sample[k] = sample[k - 1];
+                while (k > 1 && nums[k] < nums[k - 1]) {
+                    nums[k] = nums[k - 1];
                     k--;
                 }
-                sample[k] = now;
+                nums[k] = value;
             }
         }
     }
@@ -208,38 +205,6 @@ public class Main {
         }
         return head;
     }
-
-//    public static boolean isPalindrome(ListNode head) {
-//        ListNode slow = head;
-//        ListNode fast = head;
-//        if (fast == null || fast.next == null)//0个节点或是1个节点
-//            return true;
-//        while (fast.next != null && fast.next.next != null) {
-//            fast = fast.next.next;
-//            slow = slow.next;
-//        }
-//        //对链表后半段进行反转
-//        ListNode midNode = slow;
-//        ListNode firNode = slow.next;//后半段链表的第一个节点
-//        ListNode cur = firNode.next;//插入节点从第一个节点后面一个开始
-//        firNode.next = null;//第一个节点最后会变最后一个节点
-//        while (cur != null) {
-//            ListNode nextNode = cur.next;//保存下次遍历的节点
-//            cur.next = midNode.next;
-//            midNode.next = cur;
-//            cur = nextNode;
-//        }
-//        //反转之后对前后半段进行比较
-//        slow = head;
-//        fast = midNode.next;
-//        while (fast != null) {
-//            if (fast.val != slow.val)
-//                return false;
-//            slow = slow.next;
-//            fast = fast.next;
-//        }
-//        return true;
-//    }
 
     public static ListNode reverseLinkedList(ListNode head) {
         if (head == null || head.next == null) {
@@ -621,8 +586,7 @@ public class Main {
         return retNode;
     }
 
-    public static DoublyListNode constructHelper(TreeNode root) {
-        if (root == null) return null;
+    private static DoublyListNode constructHelper(TreeNode root) {
         DoublyListNode node = new DoublyListNode(root.val);
         if (root.left != null) {
             DoublyListNode left = constructHelper(root.left);
@@ -663,7 +627,52 @@ public class Main {
         return node;
     }
 
-    public int majorityNumber(List<Integer> nums, int k) {
+    public static int majorityNumber(List<Integer> nums) {
+        assert nums != null && nums.size() > 0;
+        Integer candidate = null;
+        int count = 0;
+        for (Integer num : nums) {
+            if (count == 0 || Objects.equals(candidate, num)) {
+                count++;
+                candidate = num;
+            } else {
+                count--;
+                candidate = count == 0 ? null : candidate;
+            }
+        }
+        return candidate == null ? -1 : candidate;
+    }
+
+    public static int majorityNumberI(List<Integer> nums) {
+        assert nums != null && nums.size() >= 3;
+        int countA = 0, countB = 0;
+        Integer a = null, b = null;
+        for (Integer num : nums) {
+            if (countA == 0 || num == a) {
+                countA++;
+                a = num;
+            } else if (countB == 0 || num == b) {
+                countB++;
+                b = num;
+            } else {
+                countB--;
+                countA--;
+            }
+        }
+        countA = 0;
+        countB = 0;
+        for (Integer num : nums) {
+            if (num == a) {
+                countA++;
+            }
+            if (num == b) {
+                countB++;
+            }
+        }
+        return countA > countB ? a : b;
+    }
+
+    public static int majorityNumberII(List<Integer> nums, int k) {
         Map<Integer, Integer> counter = new HashMap<>();
         for (Integer num : nums) {
             counter.put(num, counter.containsKey(num) ? counter.get(num) + 1 : 1);
@@ -703,12 +712,51 @@ public class Main {
         return maxKey;
     }
 
+    private static int majorityNumberIII(List<Integer> nums, int k) {
+        Map<Integer, Integer> counter = new HashMap<>();
+        for (Integer num : nums) {
+            if (counter.containsKey(num)) {
+                counter.put(num, counter.get(num) + 1);
+            } else {
+                counter.put(num, 1);
+                if (counter.size() == k) {
+                    Set<Integer> removeKeys = new HashSet<>();
+                    for (Integer integer : counter.keySet()) {
+                        if (counter.get(integer) <= 1) {
+                            removeKeys.add(integer);
+                        } else {
+                            counter.put(integer, counter.get(integer) - 1);
+                        }
+                    }
+                    for (Integer removeKey : removeKeys) {
+                        counter.remove(removeKey);
+                    }
+                }
+            }
+        }
+        for (Integer integer : counter.keySet()) {
+            counter.put(integer, 0);
+        }
+        for (Integer num : nums) {
+            if (counter.containsKey(num)) {
+                counter.put(num, counter.get(num) + 1);
+            }
+        }
+        Map.Entry<Integer, Integer> maxEntry = null;
+        for (Map.Entry<Integer, Integer> entry : counter.entrySet()) {
+            if (maxEntry == null || maxEntry.getValue() < entry.getValue()) {
+                maxEntry = entry;
+            }
+        }
+        return maxEntry == null ? -1 : maxEntry.getKey();
+    }
+
     public static TreeNode sortedListToBST1(ListNode head) {
         if (head == null) return null;
         return help(head, null);
     }
 
-    public static TreeNode help(ListNode left, ListNode right) {
+    private static TreeNode help(ListNode left, ListNode right) {
         if (left == right) return null;
         ListNode fast = left, slow = left;
         TreeNode node = new TreeNode(slow.val);
