@@ -1,5 +1,7 @@
 package com.lintcode;
 
+import com.books.datastructure.linkedlist.ListNode;
+
 /**
  * Created by books on 10/20/17.
  */

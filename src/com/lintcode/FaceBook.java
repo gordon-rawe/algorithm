@@ -1,5 +1,8 @@
 package com.lintcode;
 
+
+import com.books.datastructure.linkedlist.ListNode;
+
 import java.util.*;
 
 /**
