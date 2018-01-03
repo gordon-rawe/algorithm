@@ -1,4 +1,4 @@
-package com.lintcode;
+package com.lintcode.vintage;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.lintcode.lru;
+package com.lintcode.vintage.lru;
 
 /**
  * Created by books on 10/23/17.

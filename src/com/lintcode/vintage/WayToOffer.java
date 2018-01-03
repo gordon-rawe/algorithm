@@ -1,6 +1,6 @@
-package com.lintcode;
+package com.lintcode.vintage;
 
-import com.lintcode.inner.Point;
+import com.lintcode.vintage.inner.Point;
 
 import java.util.ArrayList;
 import java.util.Arrays;

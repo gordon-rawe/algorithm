@@ -1,4 +1,4 @@
-package com.lintcode;
+package com.lintcode.vintage;
 
 import com.books.datastructure.linkedlist.ListNode;
 import com.common.Utils;

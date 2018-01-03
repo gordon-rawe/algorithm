@@ -1,4 +1,4 @@
-package com.lintcode.inner;
+package com.lintcode.vintage.inner;
 
 import java.util.ArrayList;
 import java.util.Arrays;

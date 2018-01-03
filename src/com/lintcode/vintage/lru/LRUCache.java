@@ -1,4 +1,4 @@
-package com.lintcode.lru;
+package com.lintcode.vintage.lru;
 
 import java.util.HashMap;
 import java.util.Map;

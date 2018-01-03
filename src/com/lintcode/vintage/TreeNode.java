@@ -1,4 +1,4 @@
-package com.lintcode;
+package com.lintcode.vintage;
 
 /**
  * Created by books on 10/23/17.
