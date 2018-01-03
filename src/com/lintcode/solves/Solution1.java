@@ -3,7 +3,7 @@ package com.lintcode.solves;
 /**
  * Created by gordon on 1/3/18.
  */
-public class Question1 {
+public class Solution1 {
     /* Write a function that add two numbers A and B.
     * You should not use + or any arithmetic operators.*/
 
