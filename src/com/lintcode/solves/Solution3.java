@@ -25,6 +25,7 @@ public class Solution3 {
             return 1;
         }
         if (k == 0) {
+            /*求0的相当于求10的，要进行转化*/
             flag = 10;
         }
         while (n / base >= flag) {
