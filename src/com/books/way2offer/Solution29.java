@@ -5,7 +5,9 @@ package com.books.way2offer;
  */
 public class Solution29 {
 
-    /*数组中出现次数超过一半的数字*/
+    /*数组中出现次数超过一半的数字
+    * 两种办法，使用hashmap需要额外的空间，利用数组特点使用计数抵消方法可以得到T(1) O(N)的解法
+    * */
 
     public static void main(String[] args) {
         int[] nums = new int[]{2,3,2,2,2,2,5,4};
