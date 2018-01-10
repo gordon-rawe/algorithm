@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33c014df-5a3e-4e88-828c-6b88cd94ab49" name="Default" comment="lv da到">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/books/way2offer/Solution5.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/books/way2offer/Solution15.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/books/datastructure/linkedlist/ListUtils.java" afterPath="$PROJECT_DIR$/src/com/books/datastructure/linkedlist/ListUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,19 +48,41 @@
       <file leaf-file-name="Solution16.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/books/way2offer/Solution16.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="62">
               <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="15" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Solution5.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ListUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/books/datastructure/linkedlist/ListUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Solution5.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/books/way2offer/Solution5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+            <state relative-caret-position="240">
+              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Solution15.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/books/way2offer/Solution15.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,7 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution52.java" />
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution51.java" />
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution53.java" />
         <option value="$PROJECT_DIR$/src/com/lintcode/vintage/RandomListNode.java" />
@@ -152,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution39.java" />
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution38.java" />
         <option value="$PROJECT_DIR$/src/com/books/datastructure/linkedlist/ListNodeUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/books/datastructure/linkedlist/ListUtils.java" />
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution37.java" />
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution36.java" />
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution35.java" />
@@ -176,8 +198,10 @@
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution19.java" />
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution18.java" />
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution17.java" />
-        <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution16.java" />
         <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution5.java" />
+        <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution16.java" />
+        <option value="$PROJECT_DIR$/src/com/books/datastructure/linkedlist/ListUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/books/way2offer/Solution15.java" />
       </list>
     </option>
   </component>
@@ -295,7 +319,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/gordon/IdeaProjects/tester/src/com/books/way2offer/Solution34.java&#10;Node&#9;PSI&#9;JAVA://com.lintcode.ListNode&#10;Sorts&#9;FILE&#9;file:///Users/gordon/IdeaProjects/tester/src/com/lintcode/Sorts.java&#10;Linked&#9;FILE&#9;file:///Users/gordon/IdeaProjects/tester/src/com/company/LinkedIn.java&#10;u&#9;FILE&#9;file:///Users/gordon/IdeaProjects/tester/src/com/company/Util.java" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/gordon/IdeaProjects/tester/src/com/books/datastructure/linkedlist/ListUtils.java&#10;ListU&#9;FILE&#9;file:///Users/gordon/IdeaProjects/tester/src/com/books/datastructure/linkedlist/ListUtils.java&#10;Node&#9;PSI&#9;JAVA://com.lintcode.ListNode&#10;Sorts&#9;FILE&#9;file:///Users/gordon/IdeaProjects/tester/src/com/lintcode/Sorts.java&#10;Linked&#9;FILE&#9;file:///Users/gordon/IdeaProjects/tester/src/com/company/LinkedIn.java&#10;u&#9;FILE&#9;file:///Users/gordon/IdeaProjects/tester/src/com/company/Util.java" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -319,27 +343,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Solution5">
-    <configuration default="false" name="Solution19" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.books.way2offer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.books.way2offer.Solution19" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="tester" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Solution15">
     <configuration default="false" name="Solution18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -408,6 +412,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.books.way2offer.Solution5" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="tester" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Solution15" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.books.way2offer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.books.way2offer.Solution15" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -801,19 +825,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Solution19" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Solution18" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Solution17" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Solution16" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Solution5" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Solution18" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Solution17" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Solution16" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Solution5" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Solution15" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Solution5" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Solution16" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Solution17" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Solution18" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Solution19" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Solution15" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Solution5" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Solution16" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Solution17" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Solution18" />
       </list>
     </recent_temporary>
   </component>
@@ -887,12 +911,12 @@
       <workItem from="1515550145318" duration="3818000" />
       <workItem from="1515564697279" duration="3383000" />
       <workItem from="1515583333188" duration="996000" />
-      <workItem from="1515589027904" duration="1452000" />
+      <workItem from="1515589027904" duration="2169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="446218000" />
+    <option name="totallyTimeSpent" value="446935000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -916,10 +940,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4403409" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3338068" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3338068" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4375" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4375" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28432956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -984,13 +1008,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/Queue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="161" column="12" lean-forward="false" selection-start-line="161" selection-start-column="12" selection-end-line="161" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/books/way2offer/Solution43.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -1061,17 +1078,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/books/datastructure/linkedlist/ListUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/books/way2offer/Solution37.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1143,6 +1156,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1334,19 +1350,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/books/way2offer/Solution5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/books/way2offer/Solution16.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="62">
           <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="15" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/books/way2offer/Solution5.java">
+    <entry file="file://$PROJECT_DIR$/src/com/books/datastructure/linkedlist/ListUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        <state relative-caret-position="195">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/books/way2offer/Solution15.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

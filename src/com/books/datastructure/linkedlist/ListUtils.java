@@ -12,4 +12,12 @@ public class ListUtils {
         return head;
     }
 
+    public static ListNode buildSortedList() {
+        ListNode pHead = new ListNode(0);
+        pHead.next = new ListNode(1);
+        pHead.next.next = new ListNode(2);
+        pHead.next.next.next = new ListNode(3);
+        return pHead;
+    }
+
 }
