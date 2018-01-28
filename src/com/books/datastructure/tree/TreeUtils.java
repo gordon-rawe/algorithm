@@ -19,6 +19,15 @@ public class TreeUtils {
         return root;
     }
 
+    public static TreeNode buildSortedTree() {
+        TreeNode root = new TreeNode(20);
+        root.left = new TreeNode(8);
+        root.right = new TreeNode(22);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(12);
+        return root;
+    }
+
     public static void layerPrintTree(TreeNode root) {
         if (root == null) return;
         Queue<TreeNode> queue = new LinkedList<>();
