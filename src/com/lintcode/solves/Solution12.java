@@ -15,17 +15,20 @@ public class Solution12 {
      * 1. if curIndex -> 0, add and then remove it
      * 2. if numbers at curIndex and curIndex - 1 is different, add it.
      * 3. if number at curIndex is the same as the pushed numbers's last one, add it.
-     *
+     * <p>
      * finally the [1,2,2] tree will be as:
-     *                  []
-     *           [1]         []
-     *      [12]    [1]   [2]    []
-     *   [122][12][x][1][22][2][x][]
-     *
+     * []
+     * [1]         []
+     * [12]    [1]   [2]    []
+     * [122][12][x][1][22][2][x][]
+     * <p>
      * [x] means duplicated elements.
-     * */
+     */
 
     public static void main(String[] args) {
+        for (List<Integer> integers : subSets(new int[]{1, 1})) {
+            System.out.println(integers);
+        }
 
     }
 
@@ -42,15 +45,13 @@ public class Solution12 {
             res.add(new LinkedList<>(list));
             return;
         }
-        if (curIndex == 0
-                || (curIndex > 0 && nums[curIndex] != nums[curIndex - 1])
-                || (list.size() > 0 && list.peekLast() == nums[curIndex])) {
-            //在第curIndex层取这个数字
-            list.addLast(nums[curIndex]);
-            dfsTraverseHelper(nums, curIndex + 1, list, res);
-            //在curIndex层不取这个数字
-            list.pollLast();
-        }
+        //在第curIndex层取这个数字
+        list.addLast(nums[curIndex]);
         dfsTraverseHelper(nums, curIndex + 1, list, res);
+        //在curIndex层不取这个数字
+        list.pollLast();
+        if (list.isEmpty() || list.peekLast() != nums[curIndex]) {
+            dfsTraverseHelper(nums, curIndex + 1, list, res);
+        }
     }
 }

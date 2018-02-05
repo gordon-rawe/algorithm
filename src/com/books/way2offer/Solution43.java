@@ -14,7 +14,7 @@ public class Solution43 {
     * */
 
     public static void main(String[] args) {
-        possibilities(4, 6);
+        possibilities(15, 6);
     }
 
     private static void possibilities(int time, int face) {
