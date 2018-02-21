@@ -2,63 +2,49 @@ package com.lintcode.solves;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class Solution24 {
 
     public static class Node {
         Node prev;
         Node next;
+        int frequency;
         int key;
         public int value;
 
         Node(int key, int value) {
             this.key = key;
             this.value = value;
+            this.frequency = 1;
         }
     }
 
     public static class LFUCache {
 
-        Node head, tail;
+        Node head = new Node(0, 0), tail = new Node(0, 0);
         Map<Integer, Node> data = new HashMap<>();
         int capacity = 8;
 
         LFUCache(int capacity) {
             this.capacity = capacity;
+            head.next = tail;
+            tail.next = head;
         }
 
-        private void setHead(Node node) {
-            node.next = head;
-            node.prev = null;
-            if (head != null) {
-                head.prev = node;
-            }
-            head = node;
-            if (tail == null) {
-                tail = head;
-            }
+        private void moveNode(Node node) {
+
         }
 
         private void remove(Node node) {
-            if (node.prev != null) {
-                node.prev.next = node.next;
-            } else {
-                head = node.next;
-            }
-            if (node.next != null) {
-                node.next.prev = node.prev;
-            } else {
-                tail = node.prev;
-            }
+
         }
 
-        void set(int key, int value) {
+        public void set(int key, int value) {
             if (data.containsKey(key)) {
                 Node oldNode = data.get(key);
                 oldNode.value = value;
-                remove(oldNode);
-                setHead(oldNode);
+                oldNode.frequency++;
+                moveNode(oldNode);
             } else {
                 Node newNode = new Node(key, value);
                 if (data.size() >= capacity) {
@@ -66,7 +52,7 @@ public class Solution24 {
                     remove(tail);
                 }
                 data.put(key, newNode);
-                setHead(newNode);
+                moveNode(newNode);
             }
         }
 
@@ -74,24 +60,25 @@ public class Solution24 {
             if (data.containsKey(key)) {
                 Node node = data.get(key);
                 remove(node);
-                setHead(node);
+                moveNode(node);
                 return node.value;
             }
             return -1;
-        }
-
-        Set<Integer> getKeys() {
-            return data.keySet();
         }
     }
 
     public static void main(String[] args) {
         LFUCache cache = new LFUCache(3);
-        for (int i = 0; i < 10; i++) {
-            cache.set(i, i);
-        }
-        for (Integer integer : cache.getKeys()) {
-            System.out.println(integer);
-        }
+        cache.set(2, 2);
+        cache.set(1, 1);
+        System.out.println(cache.get(2));
+        System.out.println(cache.get(1));
+        System.out.println(cache.get(2));
+        cache.set(3, 3);
+        cache.set(4, 4);
+        System.out.println(cache.get(3));
+        System.out.println(cache.get(2));
+        System.out.println(cache.get(1));
+        System.out.println(cache.get(4));
     }
 }
