@@ -4,20 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Interval {
-    int start, end;
-
-    Interval(int start, int end) {
-        this.start = start;
-        this.end = end;
-    }
-
-    @Override
-    public String toString() {
-        return "[" + start + "," + end + "]";
-    }
-}
-
 public class Solution28 {
 
     /**
@@ -54,5 +40,19 @@ public class Solution28 {
         }
         res.add(newInterval);
         return res;
+    }
+
+    static class Interval {
+        int start, end;
+
+        Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+
+        @Override
+        public String toString() {
+            return "[" + start + "," + end + "]";
+        }
     }
 }
