@@ -26,6 +26,7 @@ public class Solution28 {
         }
     }
 
+    // TODO: 2/22/18  this requires remembering.
     private static List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         List<Interval> res = new ArrayList<>();
         for (Interval current : intervals) {
@@ -35,7 +36,10 @@ public class Solution28 {
                 res.add(newInterval);
                 newInterval = current;
             } else if (current.end >= newInterval.start || current.start <= newInterval.end) {
-                newInterval = new Interval(Math.min(current.start, newInterval.start), Math.max(newInterval.end, current.end));
+                newInterval = new Interval(
+                        Math.min(current.end, newInterval.start),
+                        Math.max(current.start, newInterval.end)
+                );
             }
         }
         res.add(newInterval);
